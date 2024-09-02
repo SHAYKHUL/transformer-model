@@ -146,8 +146,8 @@ class TextDataset(Dataset):
         tokens = self.tokenizer.encode(text, add_special_tokens=True, max_length=self.max_length, truncation=True, padding='max_length')
         return torch.tensor(tokens)
 
-# Load and preprocess your real-world dataset here
-# For this example, using dummy text data
+# load and preprocess dataset here
+# for example, i am using dummy text data
 texts = ["Hello, how are you?", "I'm fine, thank you!", "What are you doing?"] * 1000
 dataset = TextDataset(texts, tokenizer)
 train_size = int(0.8 * len(dataset))
